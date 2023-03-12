@@ -23,13 +23,16 @@ print(sequence)
 
 number_of_berries = 0
 
-for i in range(1, n - 1):
-    if number_of_berries < (sequence[i - 1] + sequence[i] + sequence[i + 1]):
-        number_of_berries = sequence[i - 1] + sequence[i] + sequence[i + 1]
-if number_of_berries < (sequence[n - 2] + sequence[n - 1] + sequence[0]):
-    number_of_berries = sequence[n - 2] + sequence[n - 1] + sequence[0]
-if number_of_berries < (sequence[n - 1] + sequence[0] + sequence[1]):
-    number_of_berries = sequence[n - 1] + sequence[0] + sequence[1]
+if n >= 3:
+    for i in range(1, n - 1):
+        if number_of_berries < (sequence[i - 1] + sequence[i] + sequence[i + 1]): # можно обращаться к отрицательным значениям индекса
+            number_of_berries = sequence[i - 1] + sequence[i] + sequence[i + 1]
+#       if number_of_berries < (sequence[n - 2] + sequence[n - 1] + sequence[0]):
+#           number_of_berries = sequence[n - 2] + sequence[n - 1] + sequence[0]
+#       if number_of_berries < (sequence[n - 1] + sequence[0] + sequence[1]):
+#           number_of_berries = sequence[n - 1] + sequence[0] + sequence[1]
+if n < 3:
+    number_of_berries = sum(sequence)
 
 print(number_of_berries)
 
