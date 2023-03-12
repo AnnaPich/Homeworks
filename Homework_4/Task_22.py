@@ -6,8 +6,12 @@
 list_1 = input("Enter a first list of integers separated by a space: ")
 list_2 = input("Enter a second list of integers separated by a space: ")
 
+#альтернатива:
+# list_1 = set(map(int? input().split())) - сразу преобразуеn в множество, удаляет дубли и сортирует (если данные одного типа)
+
 set_1 = set(list_1.split())
 set_2 = set(list_2.split())
+
 set_3 = set_1.union(set_2)
 print(set_3)
 list_4 = list(set_3)
