@@ -7,15 +7,20 @@
 # A = 3; B = 5 -> 243 (3⁵)
 #     A = 2; B = 3 -> 8
 
-def degree_A(a, b, c):
-    if b == 0:
-        return c
-    return (degree_A(a, (b - 1), (a * c)))
+# def degree_A(a, b, c):
+#     if b == 0 or a == 1 or a == 0:
+#         return c
+#     return (degree_A(a, (b - 1), (a * c)))
 
+def degree_A(a, b):
+    if b == 0 or a == 1 or a == 0:
+        return 1
+    return (a * degree_A(a, (b - 1)))
 
 numb_a = int(input("Enter number A: "))
 numb_b = int(input("Enter number B: "))
 extent = 1
 
-print(f'A = {numb_a}, B = {numb_b} -> {degree_A(numb_a, numb_b, extent)}')
+# print(f'A = {numb_a}, B = {numb_b} -> {degree_A(numb_a, numb_b, extent)}')
 
+print(f'A = {numb_a}, B = {numb_b} -> {degree_A(numb_a, numb_b)}')
